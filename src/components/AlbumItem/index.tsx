@@ -31,7 +31,7 @@ const AlbumItem: FC<IProps> = ({ photo, isActive }) => {
         <SafeImg width={600} height={600} src={photo.url} alt={photo.title} />
       </Link>
       <div className={classNames(styles.title_container, { [styles.active]: isActive })}>
-        <p className="red">{photo.title}</p>
+        <p>{photo.title}</p>
       </div>
     </div>
   );
