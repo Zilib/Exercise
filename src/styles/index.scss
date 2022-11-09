@@ -1,0 +1,77 @@
+:root {
+  --bg-dark: #171a1d;
+  --text-white: #fff;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+}
+
+img {
+  max-width: 100%;
+  display: flex;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.hidden {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.button-link {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.stretched {
+  position: inherit;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
+    content: '';
+    pointer-events: auto;
+  }
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat($i, minmax(0, 1fr));
+  }
+}
+
+.test {
+  transition: 2s;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+  }
+}

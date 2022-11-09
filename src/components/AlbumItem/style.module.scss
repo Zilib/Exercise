@@ -1,0 +1,33 @@
+.container {
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+// i don't think it is the best way but for my purpuroses is valid enough
+.image_container,
+.image_container > img {
+  width: 100%;
+  height: 100%;
+}
+.title_container {
+  position: absolute;
+  bottom: 0;
+  transition: 250ms;
+  background-color: #000;
+  width: 100%;
+  padding: 10px;
+  transform: translateX(100%);
+  overflow: hidden;
+  z-index: 10;
+  &.active {
+    transform: translateX(0);
+  }
+  & > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

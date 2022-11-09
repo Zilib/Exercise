@@ -1,0 +1,6 @@
+.safe_img {
+  display: none;
+  &.loaded {
+    display: inline-block;
+  }
+}
